@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>♪ Music I loved ♥</title>
+    <link rel="shortcut icon" href="//s1.music.126.net/music.ico" />
+    <link rel="stylesheet" href="music.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="output">
+            <div id="music163">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" src="http://music.163.com/outchain/player?type=0&id=31819092&auto=1&height=430"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <ul class="color">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="vector.js"></script>
+    <script>
+        $(function()
+        {
+            // 初始化 传入dom id
+            var victor = new Victor("container", "output");
+
+            var theme = [
+                ["#002c4a", "#005584"],
+                ["#35ac03", "#3f4303"],
+                ["#ac0908", "#cd5726"],
+                ["#18bbff", "#00486b"]
+            ]
+            $(".color li").each(function(index, val)
+            {
+                var color = theme[index];
+                $(this).mouseover(function()
+                {
+                    victor(color).set();
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>
